@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bone: #EFEDE8;
+    --paper: #F7F6F2;
+    --ink: #101010;
+    --mid: #6B6862;
+    --line: rgba(16, 16, 16, 0.12);
+    --nav: rgba(239, 237, 232, 0.92);
+    --wa: #1F7A4D;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Archivo', sans-serif;
+    background-color: var(--bone);
+    color: var(--ink);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    overflow-x: clip;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+  }
+
+  section {
+    scroll-margin-top: 96px;
+  }
+}
+
+/* Subtle editorial image reveal */
+.editorial-img {
+  filter: grayscale(1) contrast(1.06);
+  transition: filter 1.2s cubic-bezier(0.19, 1, 0.22, 1), transform 0.9s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.editorial-img.revealed,
+.group:hover .editorial-img {
+  filter: grayscale(0.15) contrast(1.04);
+}
+
+/* Scroll reveal helper */
+.rv {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.85s cubic-bezier(0.19, 1, 0.22, 1), transform 0.85s cubic-bezier(0.19, 1, 0.22, 1);
+  will-change: opacity, transform;
+}
+
+.rv.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
+  .rv {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .editorial-img {
+    filter: grayscale(0.15) contrast(1.04) !important;
+  }
+}

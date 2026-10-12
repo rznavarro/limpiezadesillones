@@ -1,0 +1,6 @@
+{
+  "name": "Limpieza de Sillones",
+  "description": "Limpieza y sanitización de sillones, colchones, sillas y alfombras con espuma y vapor a domicilio en Santiago, Región Metropolitana.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
