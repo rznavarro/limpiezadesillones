@@ -1,0 +1,27 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "vite",
+  "redirects": [
+    {
+      "source": "/precio-limpieza-de-sillones.html",
+      "destination": "/#precios",
+      "permanent": true
+    },
+    {
+      "source": "/contacto-limpieza-de-sillones.html",
+      "destination": "/#contacto",
+      "permanent": true
+    },
+    {
+      "source": "/autos.html",
+      "destination": "/#autos",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
